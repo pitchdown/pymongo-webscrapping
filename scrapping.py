@@ -47,7 +47,7 @@ def scrap_general_page(url):
         drink_data = {
             'title': title.get_text().strip(),
             'recipe_url': recipe_url,
-            'category': {'title': 'სასმელები', 'url': 'https://kulinaria.ge/receptebi/cat/salaTebi/'},
+            'category': {'title': 'სასმელები', 'url': 'https://kulinaria.ge/receptebi/cat/sasmelebi/'},
             'sub-category': url,
             'img': img.get('src'),
             'description': img.get('alt'),
