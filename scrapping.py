@@ -1,9 +1,10 @@
+import json
+
 from bs4 import BeautifulSoup
 import requests
 import re
 import threading
 import time
-import json
 
 start = time.time()
 
@@ -89,8 +90,12 @@ for url in urls:
 for thread in threads:
     thread.join()
 
+# Modify the data storage part
 with open('data.json', 'w', encoding='utf-8') as f:
     json.dump(results, f, ensure_ascii=False, indent=4)
+
+# Add a print statement to show how many items were scraped
+print(f"Scraped {len(results)} recipes")
 
 end = time.time()
 print(end - start)

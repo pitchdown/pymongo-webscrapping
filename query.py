@@ -10,7 +10,8 @@ db = client['recipe_database']
 collection = db['drinks_recipes']
 
 # Insert scraped data
-collection.insert_many(results)
+for result in results:
+  collection.update_one({'recipe_url': result['recipe_url']}, {'$set': result}, upsert=True)
 
 # Function to calculate the average number of ingredients
 def average_ingredients():
@@ -44,6 +45,7 @@ def most_prolific_author():
     ]
     result = list(collection.aggregate(pipeline))
     print(f"Author with the most recipes: {result[0]['_id']} ({result[0]['recipe_count']} recipes)")
+
 
 
 # Running the statistics
