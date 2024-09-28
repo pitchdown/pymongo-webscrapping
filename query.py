@@ -13,7 +13,6 @@ collection = db['drinks_recipes']
 for result in results:
   collection.update_one({'recipe_url': result['recipe_url']}, {'$set': result}, upsert=True)
 
-
 # Function to calculate the average number of ingredients
 def average_ingredients():
     pipeline = [
