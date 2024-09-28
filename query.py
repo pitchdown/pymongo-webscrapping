@@ -45,6 +45,7 @@ def most_prolific_author():
     result = list(collection.aggregate(pipeline))
     print(f"Author with the most recipes: {result[0]['_id']} ({result[0]['recipe_count']} recipes)")
 
+
 # Running the statistics
 average_ingredients()
 average_cooking_stages()
