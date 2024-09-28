@@ -36,3 +36,48 @@ You can install the necessary Python libraries using pip:
 
 ```bash
 pip install -r requirements.txt
+```
+
+
+## MongoDB Installation Steps for macOS
+
+To set up MongoDB on macOS, follow these steps:
+
+1. **Install Homebrew** (if you haven't already):
+   If you don't have Homebrew installed, you can install it by running:
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+3. **Tap the MongoDB Formulae**:
+   Add the official MongoDB tap to Homebrew:
+   ```bash
+   brew tap mongodb/brew
+   ```
+
+5. **Install MongoDB Community Edition**:
+   Use the following command to install the MongoDB Community Edition:
+   ```bash
+   brew install mongodb-community
+   ```
+
+7. **Start MongoDB**:
+   To start the MongoDB server, run:
+   ```bash
+   brew services start mongodb/brew/mongodb-community
+   ```
+
+9. **Check MongoDB Status**:
+   Ensure that MongoDB is running by checking the service list:
+   ```bash
+   brew services list
+   ```
+   
+   Look for `mongodb-community` and ensure its status is `started`.
+
+11. **Connect to MongoDB** (Optional):
+   You can test the connection to MongoDB using the mongo shell:
+   ```bash
+   mongo
+   ```
+
