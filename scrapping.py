@@ -3,6 +3,7 @@ import requests
 import re
 import threading
 import time
+import json
 
 start = time.time()
 
@@ -88,7 +89,8 @@ for url in urls:
 for thread in threads:
     thread.join()
 
-print(results)
+with open('data.json', 'w', encoding='utf-8') as f:
+    json.dump(results, f, ensure_ascii=False, indent=4)
 
 end = time.time()
 print(end - start)
